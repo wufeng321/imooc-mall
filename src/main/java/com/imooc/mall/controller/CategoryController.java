@@ -15,10 +15,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -77,7 +74,7 @@ public class CategoryController {
     }
 
     @ApiOperation("后台目录列表")
-    @PostMapping("/admin/category/list")
+    @GetMapping("/admin/category/list")
     @ResponseBody
     public ApiRestResponse listCategoryForAdmin(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
         PageInfo pageInfo = categoryService.listForAdmin(pageNum, pageSize);
@@ -85,7 +82,7 @@ public class CategoryController {
     }
 
     @ApiOperation("前台目录列表")
-    @PostMapping("/category/list")
+    @GetMapping("/category/list")
     @ResponseBody
     public ApiRestResponse listCategoryForCustomer(){
         List<CategoryVO> categoryVOS = categoryService.listCategoryForCustomer(0);
