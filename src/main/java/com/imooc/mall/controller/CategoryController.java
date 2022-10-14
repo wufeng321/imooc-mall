@@ -21,6 +21,9 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * 描述：目录Controller
+ */
 @Controller
 public class CategoryController {
     @Autowired

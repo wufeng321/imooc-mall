@@ -10,7 +10,6 @@ import com.imooc.mall.model.request.UpdateProductReq;
 import com.imooc.mall.service.ProductService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,6 +21,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.UUID;
 
+/**
+ * 描述：后台商品管理Controller
+ */
 @RestController
 public class ProductAdminController {
     @Autowired

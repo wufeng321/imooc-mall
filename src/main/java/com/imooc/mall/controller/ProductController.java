@@ -9,6 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 描述：前台商品Controller
+ */
 @RestController
 public class ProductController {
     @Autowired
