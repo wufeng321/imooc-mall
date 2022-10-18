@@ -2,6 +2,7 @@
 <Configuration status="fatal">
   <Properties>
     <Property name="baseDir" value="${sys:user.home}/logs"/>
+<!--    <Property name="baseDir" value="/root/logs"/>-->
   </Properties>
 
   <Appenders>

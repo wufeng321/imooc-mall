@@ -26,12 +26,14 @@ public class UserFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        HttpSession session = httpServletRequest.getSession();
-        currentUser =(User) session.getAttribute(Constant.IMOOC_MALL_USER);
-        if(currentUser==null){
-            PrintWriter out = new HttpServletResponseWrapper((HttpServletResponse) servletResponse).getWriter();
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpSession session = request.getSession();
+        currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        if (currentUser == null) {
+            PrintWriter out = new HttpServletResponseWrapper(
+                    (HttpServletResponse) servletResponse).getWriter();
             out.write("{\n"
                     + "    \"status\": 10007,\n"
                     + "    \"msg\": \"NEED_LOGIN\",\n"
@@ -41,7 +43,7 @@ public class UserFilter implements Filter {
             out.close();
             return;
         }
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

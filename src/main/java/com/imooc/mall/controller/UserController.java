@@ -63,7 +63,7 @@ public class UserController {
      * @return
      * @throws ImoocMallException
      */
-    @PostMapping("/login")
+    @GetMapping("/login")
     @ResponseBody
     public ApiRestResponse login(@RequestParam("userName") String userName, @RequestParam("password") String password, HttpSession session) throws ImoocMallException{
         if(StringUtils.isEmpty(userName)){
@@ -118,7 +118,7 @@ public class UserController {
      * @return
      * @throws ImoocMallException
      */
-    @PostMapping("/adminLogin")
+    @GetMapping("/adminLogin")
     @ResponseBody
     public ApiRestResponse adminLogin(@RequestParam("userName") String userName,
                                       @RequestParam("password") String password, HttpSession session)
