@@ -7,6 +7,10 @@ import com.imooc.mall.model.request.ProductListReq;
 import com.imooc.mall.model.request.UpdateProductReq;
 
 public interface ProductService {
+    /**
+     * 新增商品
+     * @param addProductReq
+     */
     void add(AddProductReq addProductReq);
 
     void update(UpdateProductReq updateProductReq);
